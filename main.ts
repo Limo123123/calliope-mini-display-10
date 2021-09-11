@@ -5,6 +5,27 @@ input.onPinPressed(TouchPin.P0, function () {
         game.removeLife(1)
     }
 })
+input.onGesture(Gesture.ScreenDown, function () {
+    if (input.soundLevel() > 15) {
+        basic.showIcon(IconNames.Angry)
+        basic.pause(5000)
+    }
+})
+input.onGesture(Gesture.FreeFall, function () {
+    music.playMelody("B A B A B A B A ", 40)
+    music.playMelody("B A B A B A B A ", 80)
+    music.playMelody("B A B A B A B A ", 120)
+    music.playMelody("B A B A B A B A ", 260)
+    music.playMelody("B A B A B A B A ", 300)
+    music.playMelody("B A B A B A B A ", 340)
+    music.playMelody("B A B A B A B A ", 380)
+    music.playMelody("B A B A B A B A ", 420)
+    music.playMelody("B A B A B A B A ", 460)
+    music.playMelody("B A B A B A B A ", 500)
+})
+input.onPinPressed(TouchPin.P3, function () {
+    basic.showString("" + (input.compassHeading()))
+})
 input.onButtonPressed(Button.A, function () {
     oled96.initDisplay()
     oled96.clearDisplay()
