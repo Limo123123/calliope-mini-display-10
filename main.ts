@@ -1,0 +1,28 @@
+input.onButtonPressed(Button.A, function () {
+    oled96.initDisplay()
+    oled96.clearDisplay()
+    oled96.setTextXY(0, 0)
+    oled96.writeString("Bitte B Druecken")
+})
+input.onGesture(Gesture.Shake, function () {
+    oled96.initDisplay()
+    oled96.clearDisplay()
+    oled96.setTextXY(0, 0)
+    oled96.writeData(input.magneticForce(Dimension.Strength))
+})
+input.onButtonPressed(Button.AB, function () {
+    oled96.initDisplay()
+    oled96.clearDisplay()
+    oled96.setTextXY(0, 0)
+    oled96.writeString("Bitte Schueteln Druecken")
+})
+input.onButtonPressed(Button.B, function () {
+    oled96.initDisplay()
+    oled96.clearDisplay()
+    oled96.setTextXY(0, 0)
+    oled96.writeString("Bitte A+B Druecken")
+})
+oled96.initDisplay()
+oled96.clearDisplay()
+oled96.setTextXY(0, 0)
+oled96.writeString("Bitte A Druecken")
